@@ -167,21 +167,29 @@ Cart
 .cart {
   min-height: calc(100vh - 120px);
   width: 90vw;
-  margin: 0 auto;
-  margin-top: 40px;
-  padding: 2rem 0;
+  margin: 1rem auto;
+  margin-top: 10px;
+  padding: 2rem;
   max-width: var(--fixed-width);
 }
 .cart h2 {
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .cart h2 {
+    margin-bottom: 3rem;
+  }
 }
 .empty-cart {
   text-transform: lowercase;
   color: var(--clr-grey-5);
   margin-top: 1rem;
   text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
 }
 .cart footer {
   margin-top: 1rem;
@@ -286,7 +294,7 @@ hr {
   display: flex;
   justify-content: start;
   align-items: center;
-  height: 150px;
+  height: 140px;
   padding-left: 1rem;
   border-radius: var(--radius);
   margin-bottom: 1rem;
@@ -339,4 +347,29 @@ hr {
   color: var(--clr-red-dark);
   text-align: center;
   letter-spacing: 2px;
+}
+
+.toast-dismiss-btn {
+  background: transparent;
+  border-color: transparent;
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--clr-white);
+  transition: var(--transition);
+}
+
+.toast-success-dismiss-btn:hover {
+  color: var(--clr-green-light);
+}
+
+.toast-error-dismiss-btn:hover {
+  color: red;
+}
+
+[role='status'] {
+  display: block;
+  letter-spacing: var(--spacing);
 }

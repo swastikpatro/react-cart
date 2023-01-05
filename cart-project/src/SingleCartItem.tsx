@@ -1,29 +1,43 @@
 import { AiFillDelete, AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
+import { cartItemType } from './types';
 
-const SingleCartItem = () => {
+const SingleCartItem = ({
+  singleCartData,
+}: {
+  singleCartData: cartItemType;
+}) => {
   return (
     <article className='cart-item'>
-      <img src='' alt='' />
+      <img src={singleCartData.img} alt={singleCartData.title} />
       <div>
-        <h4>Some Title</h4>
-        <h4 className='item-price'>$399.90</h4>
+        <h4>{singleCartData.title}</h4>
+        <h4 className='item-price'>${singleCartData.price}</h4>
         {/* remove button */}
         <button
           className='remove-btn'
-          onClick={() => console.log('remove item')}
+          data-cartid={singleCartData.id}
+          data-clicktype='remove'
         >
           <AiFillDelete />
         </button>
       </div>
       <div className='toggle-div'>
         {/* increase amount */}
-        <button className='amount-btn' onClick={() => console.log('increase')}>
+        <button
+          className='amount-btn'
+          data-cartid={singleCartData.id}
+          data-clicktype='increment'
+        >
           <AiOutlineUp />
         </button>
         {/* amount */}
-        <p className='amount'>2</p>
+        <p className='amount'>{singleCartData.amount}</p>
         {/* decrease amount */}
-        <button className='amount-btn' onClick={() => console.log('decrease')}>
+        <button
+          className='amount-btn'
+          data-cartid={singleCartData.id}
+          data-clicktype='decrement'
+        >
           <AiOutlineDown />
         </button>
       </div>
