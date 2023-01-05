@@ -41,6 +41,9 @@ const Cart = () => {
         <div className='loading-container'>
           <div className='loader'></div>
         </div>
+        <div className='loading-container'>
+          <div className='loader'></div>
+        </div>
 
         <Toaster
           position='top-center'
